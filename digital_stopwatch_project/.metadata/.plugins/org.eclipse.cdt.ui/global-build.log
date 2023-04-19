@@ -1,0 +1,42 @@
+02:37:28 **** Incremental Build of configuration Debug for project stopwatch ****
+make all 
+Building file: ../stopwatch.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"stopwatch.d" -MT"stopwatch.o" -c -o "stopwatch.o" "../stopwatch.c"
+In file included from ../stopwatch.c:10:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../stopwatch.c: In function '__vector_2':
+../stopwatch.c:37: warning: implicit declaration of function 'TIMER1_OFF'
+../stopwatch.c: In function '__vector_3':
+../stopwatch.c:43: warning: implicit declaration of function 'TIMER1_INIT'
+../stopwatch.c: At top level:
+../stopwatch.c:116: warning: conflicting types for 'TIMER1_INIT'
+../stopwatch.c:43: warning: previous implicit declaration of 'TIMER1_INIT' was here
+../stopwatch.c:131: warning: conflicting types for 'TIMER1_OFF'
+../stopwatch.c:37: warning: previous implicit declaration of 'TIMER1_OFF' was here
+Finished building: ../stopwatch.c
+ 
+Building target: stopwatch.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,stopwatch.map -mmcu=atmega32 -o "stopwatch.elf"  ./stopwatch.o   
+Finished building target: stopwatch.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S stopwatch.elf  >"stopwatch.lss"
+Finished building: stopwatch.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 stopwatch.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5604 bytes (17.1% Full)
+(.text + .data + .bootloader)
+
+Data:         15 bytes (0.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
